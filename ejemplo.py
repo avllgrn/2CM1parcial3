@@ -8,4 +8,5 @@ if __name__ == '__main__':
     
     for i in range(m):
         for j in range(n):
-            print(f'i={i},j={j}')
+            print(f'(i={i},j={j})', end=' ')
+        print()
