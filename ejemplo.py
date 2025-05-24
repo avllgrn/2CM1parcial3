@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
         for i in range(mC):
             for j in range(nC):
-                C[i][j] = A[i][j] + B[i][j]
+                C[i][j] = A[i][j] - B[i][j]
 
         print('\nA')
         for i in range(mA):
@@ -35,11 +35,11 @@ if __name__ == '__main__':
                 print(f'{B[i][j]}', end='\t')
             print()
 
-        print('\nA+B')
+        print('\nA-B')
         for i in range(mC):
             for j in range(nC):
                 print(f'{C[i][j]}', end='\t')
             print()
     else:
-        print('Error! Las matrices no pueden sumarse')
+        print('Error! Las matrices no pueden restarse')
 
