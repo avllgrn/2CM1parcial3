@@ -10,7 +10,7 @@ if __name__ == '__main__':
     mB = int(input('Dame mB '))
     nB = int(input('Dame nB '))
     
-    if mA==mB and nA==nB:
+    if nA==mB:
 
         mC = mA
         nC = nB
@@ -21,7 +21,8 @@ if __name__ == '__main__':
 
         for i in range(mC):
             for j in range(nC):
-                C[i][j] = A[i][j] - B[i][j]
+                for k in range(nA):
+                    C[i][j] += A[i][k] * B[k][j]
 
         print('\nA')
         for i in range(mA):
@@ -35,11 +36,10 @@ if __name__ == '__main__':
                 print(f'{B[i][j]}', end='\t')
             print()
 
-        print('\nA-B')
+        print('\nA*B')
         for i in range(mC):
             for j in range(nC):
                 print(f'{C[i][j]}', end='\t')
             print()
     else:
-        print('Error! Las matrices no pueden restarse')
-
+        print('Error! Las matrices no pueden multiplicarse')
