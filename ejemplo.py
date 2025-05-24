@@ -1,30 +1,45 @@
 from os import system
-from random import randrange 
+from random import randrange
 
 if __name__ == '__main__':
     system('cls')
     
-    m = int(input('Dame m '))
-    n = int(input('Dame n '))
+    mA = int(input('Dame mA '))
+    nA = int(input('Dame nA '))
+    
+    mB = int(input('Dame mB '))
+    nB = int(input('Dame nB '))
+    
+    if mA==mB and nA==nB:
 
-    mT = n
-    nT = m
+        mC = mA
+        nC = nB
 
-    M = [ [randrange(11) for j in range(n)] for i in range(m)]
-    MT = [ [0 for j in range(nT)] for i in range(mT)]
+        A = [ [randrange(11) for j in range(nA)] for i in range(mA)]
+        B = [ [randrange(11) for j in range(nB)] for i in range(mB)]
+        C = [ [0 for j in range(nC)] for i in range(mC)]
 
-    for i in range(m):
-        for j in range(n):
-            MT[j][i] = M[i][j]
+        for i in range(mC):
+            for j in range(nC):
+                C[i][j] = A[i][j] + B[i][j]
 
-    print('\nM')
-    for i in range(m):
-        for j in range(n):
-            print(f'{M[i][j]}', end='\t')
-        print()
+        print('\nA')
+        for i in range(mA):
+            for j in range(nA):
+                print(f'{A[i][j]}', end='\t')
+            print()
 
-    print('\nMT')
-    for i in range(mT):
-        for j in range(nT):
-            print(f'{MT[i][j]}', end='\t')
-        print()
+        print('\nB')
+        for i in range(mB):
+            for j in range(nB):
+                print(f'{B[i][j]}', end='\t')
+            print()
+
+        print('\nA+B')
+        for i in range(mC):
+            for j in range(nC):
+                print(f'{C[i][j]}', end='\t')
+            print()
+    else:
+        print('Error! Las matrices no pueden sumarse')
+
