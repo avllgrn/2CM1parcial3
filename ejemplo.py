@@ -326,14 +326,17 @@ if __name__ == '__main__':
     print('\n\nAnchura')
     A.muestraEnAmplitud()
 
-    print(f'\n\nHay {A.cuenta()} nodos.')
-    print(f'Suman {A.acumula()}.')
-    print(f'La altura del árbol es {A.altura()}')
-    input('Presiona una tecla para continuar...')
-    print('\n\n')
+    x = int(input('\n\nA quién eliminas? '))
+    if A.elimina(x):
+        print(f'{x} FUE eliminado')
+    else:
+        print(f'{x} NO fue eliminado')
 
-    for d in range(0, 100, 5):
-        if A.busca(d):
-            print(f'{d} ESTÁ,\tsu profundidad es {A.profundidad(d)}')
-        else:
-            print(f'{d} NO está,\tsu profundidad es {A.profundidad(d)}')
+    print('\n\nInOrdem')
+    A.muestraInorden()
+    print('\n\nPreOrdem')
+    A.muestraPreorden()
+    print('\n\nPostOrdem')
+    A.muestraPostorden()
+    print('\n\nAnchura')
+    A.muestraEnAmplitud()
