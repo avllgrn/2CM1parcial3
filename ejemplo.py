@@ -207,13 +207,13 @@ class Arbol:
 
     def profundidadRecursivo(self, aqui, dato, p):
         if aqui == None:
-            return -p
+            return None
         elif dato == aqui.dato:
-            return 1
+            return p
         elif dato < aqui.dato:
-            return 1 + self.profundidadRecursivo(aqui.izquierdo, dato, p+1)
+            return self.profundidadRecursivo(aqui.izquierdo, dato, p+1)
         elif dato > aqui.dato:
-            return 1 + self.profundidadRecursivo(aqui.derecho, dato, p+1)
+            return self.profundidadRecursivo(aqui.derecho, dato, p+1)
 
     def elimina(self, dato):
         if self.estaVacio():
@@ -325,31 +325,15 @@ if __name__ == '__main__':
     A.muestraPostorden()
     print('\n\nAnchura')
     A.muestraEnAmplitud()
-    print(f'\n\nEl menor es {A.buscaMenor()}')
-    print(f'El mayor es {A.buscaMayor()}')
-    input('Presiona una tecla para continuar...')
 
-    print(f'\nSe elimina {A.eliminaMenor()}')
-    print('\n\nInOrdem')
-    A.muestraInorden()
-    print('\n\nPreOrdem')
-    A.muestraPreorden()
-    print('\n\nPostOrdem')
-    A.muestraPostorden()
-    print('\n\nAnchura')
-    A.muestraEnAmplitud()
-    print(f'\n\nEl menor es {A.buscaMenor()}')
-    print(f'El mayor es {A.buscaMayor()}')
+    print(f'\n\nHay {A.cuenta()} nodos.')
+    print(f'Suman {A.acumula()}.')
+    print(f'La altura del árbol es {A.altura()}')
     input('Presiona una tecla para continuar...')
+    print('\n\n')
 
-    print(f'\nSe elimina {A.eliminaMayor()}')
-    print('\n\nInOrdem')
-    A.muestraInorden()
-    print('\n\nPreOrdem')
-    A.muestraPreorden()
-    print('\n\nPostOrdem')
-    A.muestraPostorden()
-    print('\n\nAnchura')
-    A.muestraEnAmplitud()
-    print(f'\n\nEl menor es {A.buscaMenor()}')
-    print(f'El mayor es {A.buscaMayor()}')
+    for d in range(0, 100, 5):
+        if A.busca(d):
+            print(f'{d} ESTÁ,\tsu profundidad es {A.profundidad(d)}')
+        else:
+            print(f'{d} NO está,\tsu profundidad es {A.profundidad(d)}')
