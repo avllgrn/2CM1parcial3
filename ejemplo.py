@@ -300,23 +300,7 @@ if __name__ == '__main__':
     system('cls')
 
     A = Arbol()
-
-    A.inserta(50)
-    A.inserta(30)
-    A.inserta(70)
-    A.inserta(20)
-    A.inserta(40)
-    A.inserta(60)
-    A.inserta(80)
-    A.inserta(10)
-    A.inserta(25)
-    A.inserta(35)
-    A.inserta(45)
-    A.inserta(55)
-    A.inserta(65)
-    A.inserta(75)
-    A.inserta(90)
-
+    
     print('\n\nInOrdem')
     A.muestraInorden()
     print('\n\nPreOrdem')
@@ -326,6 +310,15 @@ if __name__ == '__main__':
     print('\n\nAnchura')
     A.muestraEnAmplitud()
 
-    L = []
-    A.listaOrdenada(L)
+    L = [10, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 90]
     print(f'\n\nL = {L}')
+
+    A.generaDeLista(L)
+    print('\n\nInOrdem')
+    A.muestraInorden()
+    print('\n\nPreOrdem')
+    A.muestraPreorden()
+    print('\n\nPostOrdem')
+    A.muestraPostorden()
+    print('\n\nAnchura')
+    A.muestraEnAmplitud()
