@@ -326,17 +326,6 @@ if __name__ == '__main__':
     print('\n\nAnchura')
     A.muestraEnAmplitud()
 
-    x = int(input('\n\nA quién eliminas? '))
-    if A.elimina(x):
-        print(f'{x} FUE eliminado')
-    else:
-        print(f'{x} NO fue eliminado')
-
-    print('\n\nInOrdem')
-    A.muestraInorden()
-    print('\n\nPreOrdem')
-    A.muestraPreorden()
-    print('\n\nPostOrdem')
-    A.muestraPostorden()
-    print('\n\nAnchura')
-    A.muestraEnAmplitud()
+    L = []
+    A.listaOrdenada(L)
+    print(f'\n\nL = {L}')
